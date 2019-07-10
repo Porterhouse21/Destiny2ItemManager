@@ -95,7 +95,7 @@ with open('RecommendedPerks.csv') as csvfile:
             perks.append(Perk(row[0], int(row[1]), int(row[2])))
 # Get Armor from CSV
 armor = []
-with open('destinyArmor.csv') as csvfile:
+with open('destinyArmor.csv', encoding='utf-8') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
         if (row[4] != 'Exotic'):
@@ -106,15 +106,15 @@ with open('destinyArmor.csv') as csvfile:
             arm.tag = row[3]
             arm.tier = row[4]
             arm.type = row[5]
-            arm.equippable = row[6]
-            arm.power = row[7]
-            arm.masterworkType = row[8]
-            arm.masterworkTier = row[9]
-            arm.mobility = row[18]
-            arm.recovery = row[19]
-            arm.resilience = row[20]
-            arm.notes = row[21]
-            for x in range(22, len(row)):
+            arm.equippable = row[7]
+            arm.power = row[8]
+            arm.masterworkType = row[9]
+            arm.masterworkTier = row[10]
+            arm.mobility = row[19]
+            arm.recovery = row[20]
+            arm.resilience = row[21]
+            arm.notes = row[22]
+            for x in range(23, len(row)):
                 arm.perks.append(row[x].replace('*', ''))
 
             if arm.tag not in ['Tag', 'favorite']:
